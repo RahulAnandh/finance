@@ -9,21 +9,21 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NoPage from "./pages/NoPage";
 import Layout from "./pages/Layout";
+import ProtectedRoutes from "./utils/protectedRoutes";
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(null);
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {isLogin === false && (
-            <Route path="/" element={<Login />}>
-              <Route index element={<Login />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              <Route path="*" element={<NoPage />} />
-            </Route>
-          )}
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/" element={<Layout />}></Route>
+            <Route path="/home" element={<Home />}></Route>
+            <Route path="*" element={<NoPage />}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

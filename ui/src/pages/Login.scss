@@ -1,0 +1,17 @@
+$page_margin: 100px;
+$border_radius: 5px;
+$background_color: #fff;
+$form_margin: auto;
+$margin_left: auto;
+$margin_right: auto;
+$margin_top: auto;
+$margin_bottom: auto;
+.login_form {
+  padding: $page_margin;
+  border-radius: $border_radius;
+  background-color: $background_color;
+  $margin_left: auto;
+  $margin_right: auto;
+  $margin_top: auto;
+  $margin_bottom: auto;
+}
